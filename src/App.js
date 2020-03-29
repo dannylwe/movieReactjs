@@ -17,7 +17,7 @@ function App() {
     if (e.key === "Enter") {
       axios.get(apiUrl + "&s=" + state.s).then( response  => {
         let results = response.data.Search;
-        console.log(response.data.Search);
+        // console.log(response.data.Search);
         setState(prevState => {
           return { ...prevState, results: results }
         })
@@ -40,6 +40,7 @@ function App() {
       </header>
       <main>
         <Search handleChange={handleChange} search={search} />
+        {/* {state.s.length < 1 ? "hello" : ""} */}
         <Results results={state.results} />
       </main>
     </div>
