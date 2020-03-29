@@ -24,12 +24,14 @@ function App() {
       state.results = [];
 
       axios.get(apiUrl + "&s=" + state.s).then( response  => {
-        let results = response.data.Search;
-        console.log(response);
-        let pages = Math.round(response.data.totalResults / 10);
-        setState(prevState => {
-          return { ...prevState, pages: pages, results: results}
-        });
+        if(response.data.Search){
+          let results = response.data.Search;
+          console.log(response);
+          let pages = Math.round(response.data.totalResults / 10);
+          setState(prevState => {
+            return { ...prevState, pages: pages, results: results}
+          });
+        }
       });
     }
   }
@@ -79,7 +81,8 @@ function App() {
       </header>
       <main>
         <Search handleChange={handleChange} search={search} />
-        {/* {state.s.length < 1 ? "hello" : ""} */}
+        {/* TODO: Add now showing TV shows and movies using https://thetvdb.com/api-information API and 
+        https://www.themoviedb.org/documentation/api */}
         <Results results={state.results} openPopup={openPopup} />
         {state.pages > 1 ? <Next nextPage={nextPage} pages={state.pages} /> : false }
         {(typeof state.selected.Title != "undefined") ? <Popup selected={state.selected} closePopup={closePopup} /> : false}
