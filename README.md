@@ -4,4 +4,5 @@ simple movie app consuming data from a restful endpoint
 ## to run
 npm start
 
-## TODO: deploy to netlify
+## deploy to netlify
+link: https://hardcore-kalam-67a0a2.netlify.com/
