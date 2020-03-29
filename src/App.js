@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import Search from './components/Search';
 
 function App() {
   return (
@@ -7,6 +8,9 @@ function App() {
       <header className="App-header">
         <h1>Movie App</h1>
       </header>
+      <main>
+        <Search />
+      </main>
     </div>
   );
 }
