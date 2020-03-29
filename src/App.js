@@ -7,7 +7,7 @@ import Popup from './components/Popup';
 import Next from './components/Next';
 
 function App() {
-  const apiUrl = "http://www.omdbapi.com/?apikey=aefdd5fb";
+  const apiUrl = "https://www.omdbapi.com/?apikey=aefdd5fb";
   
   const [state, setState] = useState({
     s: "",
